@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Photo Button Sound</title>
+
+<style>
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+
+/* КНОПКА-КАРТИНКА */
+#photoBtn {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;      /* если нужен круг — оставь */
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<img src="photo.jpg" id="photoBtn">
+
+<audio id="sound" src="sound.mp3"></audio>
+
+<script>
+const btn = document.getElementById("photoBtn");
+const sound = document.getElementById("sound");
+
+btn.addEventListener("click", () => {
+    sound.currentTime = 0;
+    sound.play();
+});
+</script>
+
+</body>
+</html>
